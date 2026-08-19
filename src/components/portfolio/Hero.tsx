@@ -1,6 +1,6 @@
 import { ArrowRight, Brain, Code2, Download, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portrait from "@/assets/rizwan-portrait.jpg.asset.json";
+import profile from "@/assets/rizwan-profile.png.asset.json";
 
 const stack = [
   "HTML",

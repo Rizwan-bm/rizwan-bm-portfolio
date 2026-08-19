@@ -1,6 +1,6 @@
 import { ArrowRight, Brain, Code2, Download, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portrait from "@/assets/rizwan-portrait.jpg.asset.json";
+import profile from "@/assets/rizwan-profile.png.asset.json";
 
 const stack = [
   "HTML",
@@ -102,36 +102,36 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="rise relative mx-auto w-full max-w-sm [animation-delay:200ms]">
+        <div className="rise relative mx-auto w-full max-w-[22rem] [animation-delay:200ms]">
           <div
             aria-hidden
-            className="animate-spin-slow absolute -inset-6 rounded-full border border-dashed border-primary/25"
+            className="animate-spin-slow absolute -inset-5 rounded-full border-2 border-dashed border-primary/25"
           />
           <div
             aria-hidden
-            className="absolute inset-0 -rotate-6 rounded-[2rem] border border-primary/30 bg-primary/5"
+            className="absolute -inset-2 rounded-full border border-primary/20 bg-primary/5"
           />
-          <div className="glass-card relative overflow-hidden rounded-[2rem] p-3">
+          <div className="glass-card relative aspect-square overflow-hidden rounded-full p-2">
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent"
+              className="pointer-events-none absolute inset-2 z-10 rounded-full bg-gradient-to-t from-background/60 via-transparent to-transparent"
             />
             <img
-              src={portrait.url}
+              src={profile.url}
               alt="Portrait of B M Rizwan, Associate Software Engineer"
-              width={896}
-              height={1152}
-              className="w-full rounded-[1.5rem] object-cover"
+              width={600}
+              height={800}
+              className="size-full rounded-full object-cover"
             />
           </div>
 
-          <div className="animate-float glass-card absolute -top-4 -left-4 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium sm:-left-10">
+          <div className="animate-float glass-card absolute -top-2 -left-4 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium sm:-left-10">
             <Code2 className="size-4 text-primary" /> Web Development
           </div>
-          <div className="animate-float glass-card absolute top-1/3 -right-3 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium [animation-delay:-2s] sm:-right-8">
+          <div className="animate-float glass-card absolute top-1/3 -right-4 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium [animation-delay:-2s] sm:-right-10">
             <Brain className="size-4 text-accent" /> AI &amp; Robotics
           </div>
-          <div className="animate-float glass-card absolute -bottom-5 -left-3 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium [animation-delay:-4s] sm:-left-8">
+          <div className="animate-float glass-card absolute -bottom-2 -left-4 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium [animation-delay:-4s] sm:-left-8">
             <ShieldCheck className="size-4 text-primary" /> Cybersecurity
           </div>
         </div>

@@ -39,7 +39,7 @@ export function Navbar() {
           <span className="grid size-9 place-items-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/40">
             R
           </span>
-          <span className="text-gradient">B M Rizwan</span>
+          <span className="text-gradient">Rizwan</span>
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">

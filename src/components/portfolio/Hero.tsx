@@ -65,11 +65,6 @@ export function Hero() {
           <p className="rise mt-5 max-w-xl text-xl font-semibold [animation-delay:200ms] sm:text-2xl">
             Building Clean, Smart &amp; User-Friendly Digital Solutions.
           </p>
-          <p className="rise mt-5 max-w-xl leading-relaxed text-muted-foreground [animation-delay:260ms]">
-            I build responsive web applications with HTML, CSS, JavaScript, PHP, Python and MySQL,
-            while continuously exploring artificial intelligence, robotics and cybersecurity. I love
-            turning ideas into practical, well-crafted software.
-          </p>
 
           <div className="rise mt-8 flex flex-wrap gap-3 [animation-delay:320ms]">
             <Button asChild size="lg" className="rounded-full">

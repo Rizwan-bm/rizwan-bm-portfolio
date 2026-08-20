@@ -51,31 +51,6 @@ export function About() {
           </ul>
         </div>
 
-        <aside className="glass-card h-fit rounded-3xl p-7">
-          <div className="grid size-14 place-items-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/40">
-            <User className="size-6" />
-          </div>
-          <h3 className="mt-5 font-display text-xl font-bold">B M Rizwan</h3>
-          <p className="mt-1 font-mono text-xs tracking-widest text-primary uppercase">
-            Junior Software Engineer
-          </p>
-          <dl className="mt-6 space-y-4 text-sm">
-            <div>
-              <dt className="text-muted-foreground">Role</dt>
-              <dd className="mt-0.5 font-medium">Associate / Junior Software Engineer</dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">Location</dt>
-              <dd className="mt-0.5 flex items-center gap-2 font-medium">
-                <MapPin className="size-4 text-primary" /> Bogawantalawa, Sri Lanka
-              </dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">Focus</dt>
-              <dd className="mt-0.5 font-medium">Web Development, AI, Robotics, Cybersecurity</dd>
-            </div>
-          </dl>
-        </aside>
       </div>
     </Section>
   );

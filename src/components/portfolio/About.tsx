@@ -14,6 +14,7 @@ export function About() {
   return (
     <Section
       id="about"
+      eyebrow="Who I Am"
       title="About Me"
     >
       <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">

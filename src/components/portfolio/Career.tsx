@@ -13,7 +13,7 @@ export function Career() {
     <Section
       id="career"
       eyebrow="Career"
-      title="Junior Software Engineer — Career Beginning"
+      title="Associate Software Engineer — Career Beginning"
       description="I'm at the start of my software engineering journey, actively developing my technical skills and seeking opportunities to gain practical experience and contribute to real-world software projects."
     >
       <div className="grid gap-5 sm:grid-cols-3">

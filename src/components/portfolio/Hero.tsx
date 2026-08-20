@@ -1,6 +1,6 @@
 import { ArrowRight, Brain, Code2, Download, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProfileOrb } from "@/components/portfolio/ProfileOrb";
+import profile from "@/assets/rizwan-profile.png.asset.json";
 
 const stack = [
   "HTML",
@@ -98,7 +98,27 @@ export function Hero() {
         </div>
 
         <div className="rise relative mx-auto w-full max-w-[22rem] [animation-delay:200ms]">
-          <ProfileOrb />
+          <div
+            aria-hidden
+            className="animate-spin-slow absolute -inset-5 rounded-full border-2 border-dashed border-primary/25"
+          />
+          <div
+            aria-hidden
+            className="absolute -inset-2 rounded-full border border-primary/20 bg-primary/5"
+          />
+          <div className="glass-card relative aspect-square overflow-hidden rounded-full p-2">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-2 z-10 rounded-full bg-gradient-to-t from-background/60 via-transparent to-transparent"
+            />
+            <img
+              src={profile.url}
+              alt="Portrait of B M Rizwan, Associate Software Engineer"
+              width={600}
+              height={800}
+              className="size-full rounded-full object-cover"
+            />
+          </div>
 
           <div className="animate-float glass-card absolute -top-2 -left-4 flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium sm:-left-10">
             <Code2 className="size-4 text-primary" /> Web Development

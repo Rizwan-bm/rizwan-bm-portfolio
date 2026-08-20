@@ -22,11 +22,6 @@ const items = [
     org: "Mars Tech",
     status: "Currently Following",
   },
-  {
-    title: "G.C.E. Advanced Level (A/L)",
-    org: "Completed in 2017",
-    status: "Completed",
-  },
 ];
 
 export function Education() {

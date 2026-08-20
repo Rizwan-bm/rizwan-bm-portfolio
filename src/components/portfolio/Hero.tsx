@@ -58,7 +58,7 @@ export function Hero() {
           </h1>
 
           <p className="rise mt-4 font-mono text-sm tracking-[0.25em] text-primary uppercase [animation-delay:140ms] sm:text-base">
-            Junior Software Engineer
+            Associate Software Engineer
             <span className="animate-caret ml-1 inline-block text-accent">_</span>
           </p>
 

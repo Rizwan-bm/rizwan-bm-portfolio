@@ -14,8 +14,8 @@ export function About() {
   return (
     <Section
       id="about"
-      eyebrow="About Me"
-      title="Turning ideas into practical digital solutions"
+      eyebrow="My Journey"
+      title="About Me"
     >
       <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
         <div className="glass-card rounded-3xl p-7 sm:p-9">

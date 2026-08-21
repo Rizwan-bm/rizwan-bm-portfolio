@@ -1,19 +1,5 @@
-import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { z } from "zod";
-import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Section } from "./Section";
-
-const schema = z.object({
-  name: z.string().trim().min(1, "Please enter your name").max(100),
-  email: z.string().trim().email("Please enter a valid email").max(255),
-  subject: z.string().trim().min(1, "Please enter a subject").max(150),
-  message: z.string().trim().min(1, "Please enter a message").max(1000),
-});
 
 const details = [
   { icon: Mail, label: "Email", value: "bm.rizwan.it@gmail.com", href: "mailto:bm.rizwan.it@gmail.com" },
@@ -22,33 +8,6 @@ const details = [
 ];
 
 export function Contact() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
-    const parsed = schema.safeParse(data);
-
-    if (!parsed.success) {
-      const next: Record<string, string> = {};
-      for (const issue of parsed.error.issues) {
-        const key = String(issue.path[0]);
-        if (!next[key]) next[key] = issue.message;
-      }
-      setErrors(next);
-      return;
-    }
-
-    setErrors({});
-    const { subject, name, email, message } = parsed.data;
-    window.location.href = `mailto:bm.rizwan.it@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`)}`;
-    toast.success("Opening your email app to send the message.");
-    form.reset();
-  };
-
   return (
     <Section
       id="contact"

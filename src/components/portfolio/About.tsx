@@ -17,7 +17,7 @@ export function About() {
       eyebrow="Who I Am"
       title="About Me"
     >
-      <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <div className="mx-auto max-w-4xl">
         <div className="glass-card rounded-3xl p-7 sm:p-9">
           <div className="space-y-4 leading-relaxed text-muted-foreground">
             <p>
@@ -50,7 +50,6 @@ export function About() {
             ))}
           </ul>
         </div>
-
       </div>
     </Section>
   );

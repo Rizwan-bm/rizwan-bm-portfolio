@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,8 @@ const details = [
   { icon: Mail, label: "Email", value: "bm.rizwan.it@gmail.com", href: "mailto:bm.rizwan.it@gmail.com" },
   { icon: Phone, label: "Phone", value: "+94 (76) 731 2298", href: "tel:+94767312298" },
   { icon: MapPin, label: "Location", value: "Bogawantalawa, Sri Lanka" },
+  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/bm-rizwan", href: "https://www.linkedin.com/in/bm-rizwan", external: true },
+  { icon: Github, label: "GitHub", value: "github.com/Rizwan-bm", href: "https://github.com/Rizwan-bm", external: true },
 ];
 
 export function Contact() {
@@ -71,6 +73,8 @@ export function Contact() {
                   {d.href ? (
                     <a
                       href={d.href}
+                      target={d.external ? "_blank" : undefined}
+                      rel={d.external ? "noopener noreferrer" : undefined}
                       className="mt-1 block truncate font-medium transition-colors hover:text-primary"
                     >
                       {d.value}

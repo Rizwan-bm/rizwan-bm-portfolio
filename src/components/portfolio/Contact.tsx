@@ -1,5 +1,19 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { z } from "zod";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Section } from "./Section";
+
+const schema = z.object({
+  name: z.string().trim().min(1, "Please enter your name").max(100),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+  subject: z.string().trim().min(1, "Please enter a subject").max(150),
+  message: z.string().trim().min(1, "Please enter a message").max(1000),
+});
 
 const details = [
   { icon: Mail, label: "Email", value: "bm.rizwan.it@gmail.com", href: "mailto:bm.rizwan.it@gmail.com" },
@@ -8,6 +22,33 @@ const details = [
 ];
 
 export function Contact() {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+    const parsed = schema.safeParse(data);
+
+    if (!parsed.success) {
+      const next: Record<string, string> = {};
+      for (const issue of parsed.error.issues) {
+        const key = String(issue.path[0]);
+        if (!next[key]) next[key] = issue.message;
+      }
+      setErrors(next);
+      return;
+    }
+
+    setErrors({});
+    const { subject, name, email, message } = parsed.data;
+    window.location.href = `mailto:bm.rizwan.it@gmail.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`)}`;
+    toast.success("Opening your email app to send the message.");
+    form.reset();
+  };
+
   return (
     <Section
       id="contact"
@@ -43,16 +84,33 @@ export function Contact() {
           </ul>
         </div>
 
-        <div className="glass-card overflow-hidden rounded-3xl p-2 sm:p-4">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScB7EOD18_7N3yb6_rLbWReTnXnc5mQoYMCUGjawMF_Jz8j2Q/viewform?embedded=true"
-            title="Contact form"
-            loading="lazy"
-            className="h-[900px] w-full rounded-2xl border-0 bg-transparent"
-          >
-            Loading…
-          </iframe>
-        </div>
+        <form onSubmit={onSubmit} noValidate className="glass-card rounded-3xl p-7">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-2">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" name="name" maxLength={100} placeholder="Your name" />
+              {errors["name"] && <p className="text-xs text-destructive">{errors["name"]}</p>}
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" name="email" type="email" maxLength={255} placeholder="you@example.com" />
+              {errors["email"] && <p className="text-xs text-destructive">{errors["email"]}</p>}
+            </div>
+          </div>
+          <div className="mt-5 grid gap-2">
+            <Label htmlFor="subject">Subject</Label>
+            <Input id="subject" name="subject" maxLength={150} placeholder="How can I help?" />
+            {errors["subject"] && <p className="text-xs text-destructive">{errors["subject"]}</p>}
+          </div>
+          <div className="mt-5 grid gap-2">
+            <Label htmlFor="message">Message</Label>
+            <Textarea id="message" name="message" rows={6} maxLength={1000} placeholder="Write your message..." />
+            {errors["message"] && <p className="text-xs text-destructive">{errors["message"]}</p>}
+          </div>
+          <Button type="submit" size="lg" className="mt-6 w-full rounded-full sm:w-auto">
+            <Send /> Send Message
+          </Button>
+        </form>
       </div>
     </Section>
   );

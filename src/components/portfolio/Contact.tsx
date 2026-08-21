@@ -84,33 +84,16 @@ export function Contact() {
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} noValidate className="glass-card rounded-3xl p-7">
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div className="grid gap-2">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" name="name" maxLength={100} placeholder="Your name" />
-              {errors["name"] && <p className="text-xs text-destructive">{errors["name"]}</p>}
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" maxLength={255} placeholder="you@example.com" />
-              {errors["email"] && <p className="text-xs text-destructive">{errors["email"]}</p>}
-            </div>
-          </div>
-          <div className="mt-5 grid gap-2">
-            <Label htmlFor="subject">Subject</Label>
-            <Input id="subject" name="subject" maxLength={150} placeholder="How can I help?" />
-            {errors["subject"] && <p className="text-xs text-destructive">{errors["subject"]}</p>}
-          </div>
-          <div className="mt-5 grid gap-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" rows={6} maxLength={1000} placeholder="Write your message..." />
-            {errors["message"] && <p className="text-xs text-destructive">{errors["message"]}</p>}
-          </div>
-          <Button type="submit" size="lg" className="mt-6 w-full rounded-full sm:w-auto">
-            <Send /> Send Message
-          </Button>
-        </form>
+        <div className="glass-card overflow-hidden rounded-3xl p-2 sm:p-4">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScB7EOD18_7N3yb6_rLbWReTnXnc5mQoYMCUGjawMF_Jz8j2Q/viewform?embedded=true"
+            title="Contact form"
+            loading="lazy"
+            className="h-[900px] w-full rounded-2xl border-0 bg-transparent"
+          >
+            Loading…
+          </iframe>
+        </div>
       </div>
     </Section>
   );

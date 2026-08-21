@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 const links = [
   { label: "About", href: "#about" },
@@ -51,6 +51,18 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <MapPin className="size-4 text-primary" /> Bogawantalawa, Sri Lanka
+            </li>
+            <li className="flex items-center gap-2">
+              <Linkedin className="size-4 text-primary" />
+              <a href="https://www.linkedin.com/in/bm-rizwan" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                linkedin.com/in/bm-rizwan
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Github className="size-4 text-primary" />
+              <a href="https://github.com/Rizwan-bm" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                github.com/Rizwan-bm
+              </a>
             </li>
           </ul>
         </div>

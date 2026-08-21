@@ -15,7 +15,7 @@ const items = [
   {
     title: "Artificial Intelligence & Robotics",
     org: "Mars Tech",
-    status: "Currently Following",
+    status: "Completed",
   },
   {
     title: "Artificial Intelligence & Cyber Security",

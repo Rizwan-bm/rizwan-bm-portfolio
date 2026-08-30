@@ -26,9 +26,7 @@ export function About() {
             </p>
             <p>
               I have a strong foundation in HTML, CSS, JavaScript, PHP, Python, C, and MySQL, and I
-              enjoy transforming ideas into practical digital solutions. I completed my G.C.E.
-              Advanced Level (A/L) in 2017 and have continued to strengthen my technical knowledge
-              through continuous learning and hands-on experience.
+              enjoy transforming ideas into practical digital solutions.
             </p>
             <p>
               I&apos;m passionate about exploring new technologies, solving real-world problems, and

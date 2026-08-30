@@ -28,6 +28,7 @@ export function Skills() {
       eyebrow="Skills"
       title="Technical Toolkit"
       description="A collection of technical skills I've developed through learning, practice, and hands-on experience."
+      className="pt-12 md:pt-16"
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {groups.map((g) => (

@@ -30,6 +30,7 @@ export function Education() {
       id="education"
       title="Education & Certifications"
       description="Qualifications completed and courses currently in progress."
+      className="pt-12 md:pt-16"
     >
       <ol className="relative mx-auto max-w-3xl border-l border-border pl-6 sm:pl-10">
         {items.map((item) => {

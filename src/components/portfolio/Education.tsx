@@ -28,7 +28,6 @@ export function Education() {
   return (
     <Section
       id="education"
-      eyebrow="EDUCATREION"
       title="Education & Certifications"
       description="Qualifications completed and courses currently in progress."
     >

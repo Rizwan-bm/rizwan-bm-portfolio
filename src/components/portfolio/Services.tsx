@@ -17,6 +17,7 @@ export function Services() {
       eyebrow="Services"
       title="What I Can Help With"
       description="Areas where I can contribute today and continue to grow."
+      className="pt-8 md:pt-10"
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (

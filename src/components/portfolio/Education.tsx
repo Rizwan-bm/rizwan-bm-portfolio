@@ -28,7 +28,7 @@ export function Education() {
   return (
     <Section
       id="education"
-      title="Education & Certifications"
+      title="Education"
       description="Qualifications completed and courses currently in progress."
       className="pt-12 md:pt-16"
     >

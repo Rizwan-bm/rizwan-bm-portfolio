@@ -15,6 +15,7 @@ export function Portfolio() {
       eyebrow="Portfolio"
       title="Projects Coming Soon"
       description="My portfolio is currently growing. I'm continuously learning, experimenting with new technologies, and preparing to showcase practical projects soon."
+      className="pt-8 md:pt-10"
     >
       <div className="glass-card relative overflow-hidden rounded-3xl p-8 text-center sm:p-12">
         <div aria-hidden className="tech-grid absolute inset-0 opacity-40" />

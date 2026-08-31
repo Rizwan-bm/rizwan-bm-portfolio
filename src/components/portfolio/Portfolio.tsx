@@ -40,7 +40,7 @@ export function Portfolio() {
         </div>
       </div>
 
-      <h3 className="mt-16 mb-6 text-center font-display text-2xl font-bold">Certificates</h3>
+      <h3 id="certificates" className="mt-16 mb-6 text-center font-display text-2xl font-bold">Certificates</h3>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {certificates.map((c) => (
           <article key={c.name} className="glass-card flex flex-col rounded-2xl p-6">

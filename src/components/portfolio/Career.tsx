@@ -12,6 +12,7 @@ export function Career() {
   return (
     <Section
       id="career"
+      className="pt-8 md:pt-10"
       eyebrow="Career"
       title="Associate Software Engineer — Career Beginning"
       description="I'm at the start of my software engineering journey, actively developing my technical skills and seeking opportunities to gain practical experience and contribute to real-world software projects."

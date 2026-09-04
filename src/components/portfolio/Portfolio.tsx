@@ -13,6 +13,7 @@ const certificates = [
   { name: "Professional Certificate of AI and Robotics", org: "Professional Certification", year: "Completed" },
   { name: "Artificial Intelligence & Robotics", org: "Mars Tech", year: "In Progress" },
   { name: "Artificial Intelligence & Cyber Security", org: "Mars Tech", year: "In Progress" },
+  { name: "Data Science & Analytics", org: "HP LIFE", year: "Completed", verifyUrl: "https://www.life-global.org/certificate/aab93036-7a35-45a9-ac6c-a7491a8fb798" },
 ];
 
 export function Portfolio() {

@@ -2,6 +2,7 @@ import { Award, ExternalLink, Rocket, Terminal } from "lucide-react";
 import { Section } from "./Section";
 import webDesignCert from "@/assets/web-design-certificate.jpg.asset.json";
 import dataScienceCert from "@/assets/data-science-certificate.png.asset.json";
+import aiForBeginnersCert from "@/assets/ai-for-beginners.png.asset.json";
 
 const certificates = [
   {

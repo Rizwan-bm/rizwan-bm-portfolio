@@ -2,6 +2,7 @@ import { Award, ExternalLink, Rocket, Terminal } from "lucide-react";
 import { Section } from "./Section";
 import webDesignCert from "@/assets/web-design-certificate.jpg.asset.json";
 import dataScienceCert from "@/assets/data-science-certificate.png.asset.json";
+import aiForBeginnersCert from "@/assets/ai-for-beginners.png.asset.json";
 
 const certificates = [
   {
@@ -15,6 +16,7 @@ const certificates = [
   { name: "Artificial Intelligence & Robotics", org: "Mars Tech", year: "In Progress" },
   { name: "Artificial Intelligence & Cyber Security", org: "Mars Tech", year: "In Progress" },
   { name: "Data Science & Analytics", org: "HP LIFE", year: "Completed", image: dataScienceCert.url, verifyUrl: "https://www.life-global.org/certificate/aab93036-7a35-45a9-ac6c-a7491a8fb798" },
+  { name: "AI for Beginners", org: "HP LIFE", year: "Completed", image: aiForBeginnersCert.url, verifyUrl: "https://www.life-global.org/certificate/71b1f4b1-71ea-4306-b6ba-eba31193be19" },
 ];
 
 export function Portfolio() {

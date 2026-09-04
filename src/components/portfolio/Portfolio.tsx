@@ -1,8 +1,15 @@
-import { Award, Rocket, Terminal } from "lucide-react";
+import { Award, ExternalLink, Rocket, Terminal } from "lucide-react";
 import { Section } from "./Section";
+import webDesignCert from "@/assets/web-design-certificate.jpg.asset.json";
 
 const certificates = [
-  { name: "Web Design for Beginners", org: "University of Moratuwa", year: "Completed" },
+  {
+    name: "Web Design for Beginners",
+    org: "University of Moratuwa",
+    year: "Completed",
+    image: webDesignCert.url,
+    verifyUrl: "https://open.uom.lk/verify?code=kWVZO3CzX8",
+  },
   { name: "Professional Certificate of AI and Robotics", org: "Professional Certification", year: "Completed" },
   { name: "Artificial Intelligence & Robotics", org: "Mars Tech", year: "In Progress" },
   { name: "Artificial Intelligence & Cyber Security", org: "Mars Tech", year: "In Progress" },
@@ -44,13 +51,35 @@ export function Portfolio() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {certificates.map((c) => (
           <article key={c.name} className="glass-card flex flex-col rounded-2xl p-6">
-            <Award className="size-5 text-primary" />
+            {c.image ? (
+              <div className="overflow-hidden rounded-xl border border-border bg-background/50">
+                <img
+                  src={c.image}
+                  alt={`${c.name} certificate`}
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <Award className="size-5 text-primary" />
+            )}
             <h4 className="mt-4 font-display text-base font-semibold">{c.name}</h4>
             <p className="mt-1 text-sm text-muted-foreground">{c.org}</p>
             <p className="mt-3 font-mono text-xs tracking-wide text-accent uppercase">{c.year}</p>
-            <span className="mt-4 text-xs text-muted-foreground/70">
-              Certificate link available on request
-            </span>
+            {c.verifyUrl ? (
+              <a
+                href={c.verifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+              >
+                Verify certificate <ExternalLink className="size-3.5" />
+              </a>
+            ) : (
+              <span className="mt-4 text-xs text-muted-foreground/70">
+                Certificate link available on request
+              </span>
+            )}
           </article>
         ))}
       </div>

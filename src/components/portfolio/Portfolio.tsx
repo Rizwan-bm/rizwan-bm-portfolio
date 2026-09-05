@@ -14,13 +14,13 @@ const certificates = [
     image: webDesignCert.url,
     verifyUrl: "https://open.uom.lk/verify?code=kWVZO3CzX8",
   },
-  { name: "Professional Certificate of AI and Robotics", org: "Professional Certification", year: "Completed" },
-  { name: "Artificial Intelligence & Robotics", org: "Mars Tech", year: "In Progress" },
-  { name: "Artificial Intelligence & Cyber Security", org: "Mars Tech", year: "In Progress" },
   { name: "Data Science & Analytics", org: "HP LIFE", year: "Completed", image: dataScienceCert.url, verifyUrl: "https://www.life-global.org/certificate/aab93036-7a35-45a9-ac6c-a7491a8fb798" },
   { name: "AI for Beginners", org: "HP LIFE", year: "Completed", image: aiForBeginnersCert.url, verifyUrl: "https://www.life-global.org/certificate/71b1f4b1-71ea-4306-b6ba-eba31193be19" },
   { name: "Professional Networking for Career Growth", org: "HP LIFE", year: "Completed", image: professionalNetworkingCert.url, verifyUrl: "https://www.life-global.org/certificate/8f8f986a-1cbd-4975-bbfc-19214fabe0c3" },
   { name: "Introduction to Cybersecurity Awareness", org: "HP LIFE", year: "Completed", image: cybersecurityAwarenessCert.url, verifyUrl: "https://www.life-global.org/certificate/2841f7a2-81ca-40ef-93d9-334d008a51e1" },
+  { name: "Professional Certificate of AI and Robotics", org: "Professional Certification", year: "Completed" },
+  { name: "Artificial Intelligence & Robotics", org: "Mars Tech", year: "In Progress" },
+  { name: "Artificial Intelligence & Cyber Security", org: "Mars Tech", year: "In Progress" },
 ];
 
 export function Portfolio() {

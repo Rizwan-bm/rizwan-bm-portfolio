@@ -27,12 +27,12 @@ export function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form));
     const parsed = schema.safeParse(data);
 
     if (!parsed.success) {
+      event.preventDefault();
       const next: Record<string, string> = {};
       for (const issue of parsed.error.issues) {
         const key = String(issue.path[0]);
@@ -43,12 +43,6 @@ export function Contact() {
     }
 
     setErrors({});
-    const { subject, name, email, message } = parsed.data;
-    window.location.href = `mailto:bm.rizwan.it@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`)}`;
-    toast.success("Opening your email app to send the message.");
-    form.reset();
   };
 
   return (
@@ -89,7 +83,7 @@ export function Contact() {
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} noValidate className="glass-card rounded-3xl p-7">
+        <form action="https://formsubmit.co/bm.rizwan.it@gmail.com" method="POST" onSubmit={onSubmit} noValidate className="glass-card rounded-3xl p-7">
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="grid gap-2">
               <Label htmlFor="name">Name</Label>

@@ -27,12 +27,12 @@ export function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form));
     const parsed = schema.safeParse(data);
 
     if (!parsed.success) {
+      event.preventDefault();
       const next: Record<string, string> = {};
       for (const issue of parsed.error.issues) {
         const key = String(issue.path[0]);
@@ -43,12 +43,6 @@ export function Contact() {
     }
 
     setErrors({});
-    const { subject, name, email, message } = parsed.data;
-    window.location.href = `mailto:bm.rizwan.it@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`)}`;
-    toast.success("Opening your email app to send the message.");
-    form.reset();
   };
 
   return (

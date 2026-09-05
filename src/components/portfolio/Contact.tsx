@@ -83,7 +83,7 @@ export function Contact() {
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} noValidate className="glass-card rounded-3xl p-7">
+        <form action="https://formsubmit.co/bm.rizwan.it@gmail.com" method="POST" onSubmit={onSubmit} noValidate className="glass-card rounded-3xl p-7">
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="grid gap-2">
               <Label htmlFor="name">Name</Label>

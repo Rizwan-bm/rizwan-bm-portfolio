@@ -5,6 +5,7 @@ import dataScienceCert from "@/assets/data-science-certificate.png.asset.json";
 import aiForBeginnersCert from "@/assets/ai-for-beginners.png.asset.json";
 import professionalNetworkingCert from "@/assets/professional-networking-for-career-growth.png.asset.json";
 import cybersecurityAwarenessCert from "@/assets/introduction-to-cybersecurity-awareness.png.asset.json";
+import introModernAICert from "@/assets/introduction-to-modern-ai.jpg.asset.json";
 
 const certificates = [
   {
@@ -18,6 +19,7 @@ const certificates = [
   { name: "AI for Beginners", org: "HP LIFE", year: "Completed", image: aiForBeginnersCert.url, verifyUrl: "https://www.life-global.org/certificate/71b1f4b1-71ea-4306-b6ba-eba31193be19" },
   { name: "Professional Networking for Career Growth", org: "HP LIFE", year: "Completed", image: professionalNetworkingCert.url, verifyUrl: "https://www.life-global.org/certificate/8f8f986a-1cbd-4975-bbfc-19214fabe0c3" },
   { name: "Introduction to Cybersecurity Awareness", org: "HP LIFE", year: "Completed", image: cybersecurityAwarenessCert.url, verifyUrl: "https://www.life-global.org/certificate/2841f7a2-81ca-40ef-93d9-334d008a51e1" },
+  { name: "Introduction to Modern AI", org: "Cisco Networking Academy", year: "Completed", image: introModernAICert.url, verifyUrl: "https://www.netacad.com/recognitions/verify/84b2c5c7-bf09-48f1-a54a-54912061170f" },
   { name: "Professional Certificate of AI and Robotics", org: "Professional Certification", year: "Completed" },
   { name: "Artificial Intelligence & Robotics", org: "Mars Tech", year: "In Progress" },
   { name: "Artificial Intelligence & Cyber Security", org: "Mars Tech", year: "In Progress" },

@@ -19,7 +19,7 @@ const stack = [
 
 const stats = [
   { value: "7+", label: "Core technologies" },
-  { value: "4", label: "Certifications" },
+  { value: "6", label: "Certifications" },
   { value: "100%", label: "Learning mindset" },
 ];
 

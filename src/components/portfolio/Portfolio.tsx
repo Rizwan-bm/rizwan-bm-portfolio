@@ -1,6 +1,7 @@
 import { Award, ExternalLink, Rocket, Terminal } from "lucide-react";
 import { Section } from "./Section";
 import webDesignCert from "@/assets/web-design-certificate.jpg.asset.json";
+import frontEndWebDevCert from "@/assets/front-end-web-development-certificate.png.asset.json";
 import dataScienceCert from "@/assets/data-science-certificate.png.asset.json";
 import aiForBeginnersCert from "@/assets/ai-for-beginners.png.asset.json";
 import professionalNetworkingCert from "@/assets/professional-networking-for-career-growth.png.asset.json";
@@ -14,6 +15,12 @@ const certificates = [
     year: "Completed",
     image: webDesignCert.url,
     verifyUrl: "https://open.uom.lk/verify?code=kWVZO3CzX8",
+  },
+  {
+    name: "Front-End Web Development",
+    org: "University of Moratuwa",
+    year: "Completed",
+    image: frontEndWebDevCert.url,
   },
   { name: "Data Science & Analytics", org: "HP LIFE", year: "Completed", image: dataScienceCert.url, verifyUrl: "https://www.life-global.org/certificate/aab93036-7a35-45a9-ac6c-a7491a8fb798" },
   { name: "AI for Beginners", org: "HP LIFE", year: "Completed", image: aiForBeginnersCert.url, verifyUrl: "https://www.life-global.org/certificate/71b1f4b1-71ea-4306-b6ba-eba31193be19" },

@@ -1,7 +1,7 @@
 # Recreate Baseline Tennis Club & Academy
 
 ## Goal
-Replace the current portfolio with the supplied Baseline landing page while preserving the project’s required TanStack shell. The visible experience will behave like the requested standalone HTML/CSS/JS site, with no backend or real form submission.
+Use the existing live preview and replace the current portfolio with the supplied Baseline landing page while preserving the project’s required TanStack shell. The visible experience will behave like the requested standalone HTML/CSS/JS site, with no backend or real form submission.
 
 ## Implementation
 - Rebuild the `/` page as the complete Baseline experience: framed hero, trust carousel, programs, facilities, stats, testimonials, footer, fullscreen menu, and contact dialog.

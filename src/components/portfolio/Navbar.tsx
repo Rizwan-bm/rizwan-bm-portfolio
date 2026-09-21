@@ -17,6 +17,7 @@ const links = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string>("home");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -25,11 +26,31 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.getElementById(l.href.slice(1)))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        }
+      },
+      // A narrow band around the middle of the viewport: whichever section
+      // occupies it becomes the active link.
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "backdrop-blur-xl bg-background/80 border-b border-border" : "bg-transparent",
+        "navbar fixed inset-x-0 top-0 z-50",
+        scrolled && "navbar--visible border-b border-border bg-background/80 backdrop-blur-xl",
       )}
     >
       <nav
@@ -44,16 +65,24 @@ export function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-primary/10 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
+          {links.map((l) => {
+            const id = l.href.slice(1);
+            const isActive = active === id;
+            return (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  aria-current={isActive ? "true" : undefined}
+                  className={cn(
+                    "nav-link rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-primary/10 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                    isActive && "text-foreground",
+                  )}
+                >
+                  {l.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden items-center gap-2 lg:flex">

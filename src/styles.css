@@ -295,6 +295,70 @@
   animation: rise-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+@layer components {
+  /*
+   * Navbar slide-in / fade-in.
+   * Initial state: parked above the viewport, invisible.
+   * .navbar--visible (added once the user scrolls down): slides down
+   * into place and fades in. Background/blur come from Tailwind
+   * utilities (bg-background/80 backdrop-blur-xl) on the header.
+   */
+  .navbar {
+    transform: translateY(-110%);
+    opacity: 0;
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s ease;
+    will-change: transform, opacity;
+  }
+
+  .navbar--visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /*
+   * Animated active-state underline for navbar links.
+   * Scales from left to right via transform-origin: left.
+   * The <a> needs .nav-link; the active one gets .active
+   * (set by the IntersectionObserver in Navbar.tsx).
+   */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.875rem;
+    right: 0.875rem;
+    bottom: 0.25rem;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .nav-link::after {
+    transition: none;
+  }
+
+  .navbar {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

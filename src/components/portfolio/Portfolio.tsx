@@ -37,8 +37,8 @@ export function Portfolio() {
   return (
     <Section
       id="portfolio"
-      eyebrow="Portfolio"
-      title="Featured Projects"
+      eyebrow=""
+      title="My Projects"
       description="A selection of digital products I have designed and built."
       className="pt-8 md:pt-10"
     >

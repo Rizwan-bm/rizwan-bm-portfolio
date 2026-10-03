@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Rocket, Terminal } from "lucide-react";
+import { Award, Bot, ExternalLink } from "lucide-react";
 import { Section } from "./Section";
 import webDesignCert from "@/assets/web-design-certificate.jpg.asset.json";
 import frontEndWebDevCert from "@/assets/front-end-web-development-certificate.png.asset.json";
@@ -38,32 +38,40 @@ export function Portfolio() {
     <Section
       id="portfolio"
       eyebrow="Portfolio"
-      title="Projects Coming Soon"
-      description="My portfolio is currently growing. I'm continuously learning, experimenting with new technologies, and preparing to showcase practical projects soon."
+      title="Featured Projects"
+      description="A selection of digital products I have designed and built."
       className="pt-8 md:pt-10"
     >
-      <div className="glass-card relative overflow-hidden rounded-3xl p-8 text-center sm:p-12">
+      <article className="glass-card relative overflow-hidden rounded-3xl p-8 sm:p-10">
         <div aria-hidden className="tech-grid absolute inset-0 opacity-40" />
-        <div className="relative mx-auto max-w-xl">
-          <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/40">
-            <Rocket className="size-6" />
+        <div className="relative flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <div className="grid size-14 place-items-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/40">
+              <Bot className="size-7" />
+            </div>
+            <p className="mt-5 font-mono text-xs tracking-widest text-accent uppercase">AI Assistant</p>
+            <h3 className="mt-2 font-display text-2xl font-bold sm:text-3xl">ThinkBot</h3>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              An intelligent assistant designed to deliver a focused, approachable conversational experience.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2" aria-label="Project technologies">
+              {['Web App', 'Artificial Intelligence', 'Responsive UI'].map((technology) => (
+                <span key={technology} className="rounded-full border border-border bg-background/50 px-3 py-1 font-mono text-xs text-muted-foreground">
+                  {technology}
+                </span>
+              ))}
+            </div>
           </div>
-          <h3 className="mt-5 font-display text-xl font-semibold">Building towards real-world work</h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            I&apos;m sharpening my skills through courses and hands-on practice. Real projects will
-            be published here as soon as they&apos;re ready.
-          </p>
-          <pre className="mt-7 overflow-x-auto rounded-2xl border border-border bg-background/60 p-5 text-left font-mono text-xs leading-relaxed text-muted-foreground">
-{`> status: learning
-> stack : html, css, js, php, python, mysql
-> next  : ai • robotics • cybersecurity
-> build : in progress ...`}
-          </pre>
-          <p className="mt-4 inline-flex items-center gap-2 font-mono text-xs text-primary">
-            <Terminal className="size-4" /> portfolio.deploy() — soon
-          </p>
+          <a
+            href="https://rizwan-bm.github.io/ThinkBot/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            View live project <ExternalLink className="size-4" />
+          </a>
         </div>
-      </div>
+      </article>
 
       <h3 id="certificates" className="mt-16 mb-6 text-center font-display text-2xl font-bold">Certificates</h3>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

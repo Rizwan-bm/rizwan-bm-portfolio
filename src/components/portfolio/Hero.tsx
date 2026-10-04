@@ -32,11 +32,11 @@ export function Hero() {
       />
       <div
         aria-hidden
-        className="animate-orb absolute -top-40 right-[-10%] size-[34rem] rounded-full bg-primary/25 blur-[130px]"
+        className="animate-orb absolute -top-40 right-[-10%] h-[30rem] w-[42rem] bg-primary/16 blur-[150px]"
       />
       <div
         aria-hidden
-        className="animate-orb absolute bottom-[-10rem] left-[-8rem] size-[26rem] rounded-full bg-accent/20 blur-[120px] [animation-delay:-8s]"
+        className="animate-orb absolute bottom-[-10rem] left-[-8rem] h-[22rem] w-[36rem] bg-accent/12 blur-[140px] [animation-delay:-8s]"
       />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 md:grid-cols-[1.1fr_0.9fr]">
